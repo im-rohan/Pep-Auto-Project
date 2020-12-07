@@ -48,8 +48,8 @@ book = process.argv[2];
     const publish = await tab.$eval('#details > div:nth-child(2)', el => el.innerText);
     console.log(publish);
 
-    await tab.waitForSelector(`ul li a[href="/buy_buttons/14/follow?book_id=7913305&ref=x_gr_w_bb_sout&tag=x_gr_w_bb_sout-20"]`);
-    await tab.click(`ul li a[href="/buy_buttons/14/follow?book_id=7913305&ref=x_gr_w_bb_sout&tag=x_gr_w_bb_sout-20"]`);
+    await tab.waitForSelector(`#buyButton`);
+    await tab.click(`#buyButton`);
     
     await tab.waitFor(3000);
     numberofPages = await browser.pages();
